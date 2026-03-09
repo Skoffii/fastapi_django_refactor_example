@@ -10,9 +10,7 @@ class Comment(BaseModel):
 
 
 class CommentRequest(BaseModel):
-    text: str
-    post_id: int
-    autor_id: int
+    pass
 
 
 class CommentUpdate(BaseModel):

@@ -1,9 +1,6 @@
 from pydantic import BaseModel
 from datetime import datetime
 
-from location import Location
-from category import Category
-
 
 class Post(BaseModel):
     is_published: bool = True
@@ -13,28 +10,28 @@ class Post(BaseModel):
     pub_date: datetime
     image: str | None = None
     author_id: int
-    location: Location | None = None
-    category: Category | None = None
+    location: int | None = None
+    category: int | None = None
 
 
 class PostRequest(Post):
     pass
 
 
-class PostUpdate(Post):
+class PostUpdate(BaseModel):
     is_published: bool | None = True
     created_at: datetime | None = None
     title: str | None = None
     text: str | None = None
     pub_date: datetime | None = None
     image: str | None = None
-    location: Location | None = None
-    category: Category | None = None
+    location: int | None = None
+    category: int | None = None
 
 
 class PostResponse(BaseModel):
     author: int
     title: str
     created_at: datetime
-    location: Location | None = None
-    category: Category | None = None
+    location: int | None = None
+    category: int | None = None

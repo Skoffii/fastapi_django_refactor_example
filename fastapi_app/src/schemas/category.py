@@ -5,6 +5,7 @@ from typing import Annotated
 class Category(BaseModel):
     is_published: bool = True
     title: str = Field(max_length=256)
+    slug: str
     description: str
 
 
@@ -17,5 +18,5 @@ class CategoryUpdate(BaseModel):
     description: str
 
 
-class CategiryResponse(Category):
+class CategoryResponse(Category):
     pass
